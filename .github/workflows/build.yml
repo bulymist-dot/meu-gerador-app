@@ -13,7 +13,6 @@ jobs:
         run: |
           npm install @capacitor/core @capacitor/cli @capacitor/android
           mkdir -p www
-          # Se o seu index.html não existir, ele cria um de teste para não dar erro
           if [ ! -f index.html ]; then echo "<html><body><h1>App Instalado</h1></body></html>" > index.html; fi
           cp index.html www/
           npx cap init "Meu App" "com.meu.app" --web-dir www
