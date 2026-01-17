@@ -9,24 +9,24 @@ jobs:
         with:
           node-version: 18
 
-      - name: Instalando e Criando Projeto
+      - name: Preparando Projeto
         run: |
           npm install @capacitor/core @capacitor/cli @capacitor/android
           mkdir -p www
-          if [ ! -f index.html ]; then echo "<html><body><h1>App Instalado</h1></body></html>" > index.html; fi
+          if [ ! -f index.html ]; then echo "<html><body><h1>App Pronto</h1></body></html>" > index.html; fi
           cp index.html www/
           npx cap init "Meu App" "com.meu.app" --web-dir www
           npx cap add android
 
-      - name: Gerando APK Final
+      - name: Fabricando o APK
         run: |
           npx cap copy
           cd android
           chmod +x gradlew
           ./gradlew assembleDebug
 
-      - name: Download do APK
+      - name: Download
         uses: actions/upload-artifact@v3
         with:
-          name: app-instalavel
+          name: app-final
           path: android/app/build/outputs/apk/debug/app-debug.apk
