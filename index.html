@@ -1,12 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu App</title>
+    <title>Meu Painel APK</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            background: #0f172a; 
+            color: #f8fafc; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            min-height: 100vh;
+        }
+        header {
+            background: #1e293b;
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-bottom: 2px solid #38bdf8;
+        }
+        .container {
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
+        }
+        .card {
+            background: #1e293b;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #334155;
+            text-align: center;
+        }
+        .icon-box {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        h2 { margin: 10px 0; color: #38bdf8; }
+        p { color: #94a3b8; font-size: 14px; }
+        .btn {
+            background: #38bdf8;
+            color: #0f172a;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            width: 100%;
+            cursor: pointer;
+            transition: transform 0.2s;
+            text-transform: uppercase;
+        }
+        .btn:active { transform: scale(0.95); }
+        .status-badge {
+            background: #22c55e;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
-<body style="margin:0; background:black; color:white; text-align:center;">
-    <h1>App Criado com Sucesso!</h1>
-    <p>Seu código HTML está funcionando aqui dentro.</p>
+<body>
+
+    <header>
+        <h1>MEU APP OFICIAL</h1>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <div class="status-badge">App Online</div>
+            <div class="icon-box">📱</div>
+            <h2>Bem-vindo</h2>
+            <p>Este aplicativo foi gerado automaticamente pelo GitHub Actions.</p>
+            <button class="btn" onclick="alert('Sistema funcionando!')">Acessar Painel</button>
+        </div>
+
+        <div class="card">
+            <div class="icon-box">⚙️</div>
+            <h2>Configurações</h2>
+            <p>Gerencie suas notificações e preferências de conta aqui.</p>
+            <button class="btn" style="background: #64748b;">Configurar</button>
+        </div>
+    </div>
+
+    <script>
+        console.log("App iniciado com sucesso!");
+    </script>
 </body>
 </html>
